@@ -85,9 +85,9 @@ number:
 
 cover:
   - platform: ratgdo
-    id: ${id_prefix}_garage_door
+    id: ${cover_id}
     device_class: garage
-    name: "Door"
+    name: ${cover_name}
     ratgdo_id: ${id_prefix}
 
 button:
