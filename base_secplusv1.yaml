@@ -37,6 +37,7 @@ ratgdo:
 ota:
   - platform: esphome
     id: ratgdo_ota
+    password: ${ota_password}
 
 lock:
   - platform: ratgdo
