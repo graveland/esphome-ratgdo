@@ -143,21 +143,21 @@ script:
               - binary_sensor.is_on: ${id_prefix}_dry_contact_close
               - binary_sensor.is_on: ${id_prefix}_dry_contact_open
           then:
-            - cover.toggle: ${id_prefix}_garage_door
+            - cover.toggle: ${cover_id}
       - if:
           condition:
             and:
               - binary_sensor.is_off: ${id_prefix}_dry_contact_close
               - binary_sensor.is_on: ${id_prefix}_dry_contact_open
           then:
-            - cover.open: ${id_prefix}_garage_door
+            - cover.open: ${cover_id}
       - if:
           condition:
             and:
               - binary_sensor.is_on: ${id_prefix}_dry_contact_close
               - binary_sensor.is_off: ${id_prefix}_dry_contact_open
           then:
-            - cover.close: ${id_prefix}_garage_door
+            - cover.close: ${cover_id}
 
 number:
   - platform: ratgdo
@@ -191,7 +191,7 @@ number:
 
 cover:
   - platform: ratgdo
-    id: ${id_prefix}_garage_door
+    id: ${cover_id}
     device_class: garage
     name: "Door"
     on_closed:
